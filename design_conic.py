@@ -52,7 +52,7 @@ if __name__ == '__main__':
     tanfovx = math.tan(cam['FoVx'] * 0.5)
     tanfovy = math.tan(cam['FoVy'] * 0.5)
     
-
+    # 3D to 2D transformations
     R = qvec2rotmat(quaternions)
     M = R * scales.unsqueeze(1) 
     S = M @ M.permute(0,2,1)
@@ -144,7 +144,6 @@ if __name__ == '__main__':
             ], 
             dim=-1
         ).unsqueeze(-1)
-    #pdb.set_trace()
     proj = proj[:,[0,1]]/proj[:,3][:,None]
     ndc2pix = lambda v,S : ((v + 1.0) * S - 1.0) * 0.5
     pix2ndc = lambda V,S : (2*V + 1)/S - 1
@@ -163,6 +162,7 @@ if __name__ == '__main__':
     rect_min_y = compare(grid_y, ((pix_y - radius)/blk_y).to(torch.int))
     rect_max_x = compare(grid_x, ((pix_x + radius + blk_x - 1)/blk_x).to(torch.int))
     rect_max_y = compare(grid_y, ((pix_y + radius +blk_y - 1)/blk_y).to(torch.int))
+    # GS CUDA kenrel inside-outside tile condition
     flag = (rect_max_x - rect_min_x) * (rect_max_y-rect_min_y) == 0
 
     eig_dec = torch.linalg.eig(S2D_)
