@@ -45,7 +45,7 @@ especially in terms of scale.
 Extraction of these quantities came from a custom CUDA kernel combined with DAVIS annotations.
 More info regarding this are out of this repo scope, but we are happy to share to anyone more interested.
 
-Your camera json file should be organized similar to the following
+Your camera json file should be organized as follows
 ```
 {
  "image_height": <H>,
