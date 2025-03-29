@@ -2,7 +2,7 @@
 *.egg-info
 *.so
 *.swp
-*.pth
+.pth
 *.pt
 *.zip
 *.rar
