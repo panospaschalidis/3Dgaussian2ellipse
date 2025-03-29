@@ -134,16 +134,6 @@ def render(centers, colors, scales, rotations, cam):
     )
     
     plt.imshow(np.array(I)[::-1])
-    #plt.axis([-2000,4000,-500,2500])
-    #transformed_positions = transformed_positions.reshape(len(transformed_positions)//2, 2)
-    #points = transformed_positions.copy()
-    #points[:,0] = points[:,0]*960+960
-    #points[:,1] = points[:,1]*540+540
-    #plt.plot(points[:,0], points[:,1], 'r*')
-    #plt.plot(center_[0,0]*960+960, center_[0,1]*540+540, 'mo')
-    #plt.plot(centers[:,0]*(1920-1), centers[:,1]*(1080-1), 'r*')
-    #plt.show()
-    #Image.fromarray(np.array(I)[::-1])
     vis = visdom.Visdom()
     #vis.image(torch.tensor(np.array(I)[::-1]).permute(2,0,1))
     vis.image(np.array(I)[::-1].transpose(2,0,1))
