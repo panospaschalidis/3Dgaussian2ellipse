@@ -1,3 +1,6 @@
+# Copyright (c) Qiang Zhang
+# "Differentiable Point-Based Radiance Fields for Efficient View Synthesis" (2022)
+
 import torch
 import numpy as np
 
