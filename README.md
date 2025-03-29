@@ -61,11 +61,11 @@ Your camera json file should be organized as follows
 }
 ```
 ## Shaders
-Regarding the openGL shaders as defined in `render_conic.py`, the 
-vertex shader employs a rectangle per Gaussian. The rectangle is moved, 
+Regarding the **openGL shaders** as defined in `render_conic.py`, the 
+**vertex shader** employs a rectangle per Gaussian. The rectangle is moved, 
 scaled and rotated accordingly given the center, rotation and scale
 parameters per Gaussian. 
-Inside the formed area we apply the following formula in the fragment shader
+Inside the formed area we apply the following formula in the **fragment shader**
 to color the ellipse. Two randomly inscribed ellipses on an 800x800 plane would 
 look something like this.
 
