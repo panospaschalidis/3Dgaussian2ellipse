@@ -60,7 +60,7 @@ Your camera json file should be organized as follows
  "FoVy": <fovy>
 }
 ```
-## Shaders
+## OpenGL Shaders
 Regarding the **openGL shaders** as defined in `render_conic.py`, the 
 **vertex shader** employs a rectangle per Gaussian. The rectangle is moved, 
 scaled and rotated accordingly given the center, rotation and scale
